@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH --job-name={{ job_name }}
+#SBATCH --partition={{ partition }}
+#SBATCH {{ gpu_directive }}
+#SBATCH --time={{ time_limit | default("8:00:00") }}
+#SBATCH --output={{ scratch }}/logs/%j.out
+#SBATCH --error={{ scratch }}/logs/%j.err
+{% if slurm_account %}#SBATCH --account={{ slurm_account }}{% endif %}
+{% if exclude_nodes %}#SBATCH --exclude={{ exclude_nodes }}{% endif %}
+
+# === Environment Setup ===
+{% for module in module_loads %}
+module load {{ module }}
+{% endfor %}
+
+{% if conda_env %}
+# Activate conda — must use full init, not bare `source activate`
+{% if conda_prefix %}
+eval "$({{ conda_prefix }}/bin/conda shell.bash hook)"
+{% else %}
+eval "$(conda shell.bash hook)"
+{% endif %}
+conda activate {{ conda_env }}
+{% if pip_deps %}
+# Install missing deps — always use pip directly, NEVER `python -c "import X" || pip install`
+# (import-check hangs on GPU nodes due to CUDA/torch initialization)
+pip install --quiet {{ pip_deps | join(" ") }}
+{% endif %}
+{% endif %}
+
+# Redirect caches to scratch (avoid quota issues on home)
+{% if hf_org %}
+export HF_ORG={{ hf_org }}
+{% endif %}
+export HF_HOME={{ scratch }}/.cache/huggingface
+export TORCH_HOME={{ scratch }}/.cache/torch
+export TMPDIR={{ scratch }}/tmp
+mkdir -p $HF_HOME $TORCH_HOME $TMPDIR {{ scratch }}/logs
+
+{{ body }}

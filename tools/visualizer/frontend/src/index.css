@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for trace panels */
+.trace-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.trace-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.trace-scroll::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+.trace-scroll::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Drag-to-reorder panel feedback — themed per visualizer */
+.theme-model .panel-drop-target {
+  outline: 2px dashed #60a5fa;
+  outline-offset: -2px;
+  border-radius: 0.5rem;
+  background: rgba(96, 165, 250, 0.05);
+}
+
+.theme-arena .panel-drop-target {
+  outline: 2px dashed #a78bfa;
+  outline-offset: -2px;
+  border-radius: 0.5rem;
+  background: rgba(167, 139, 250, 0.05);
+}
+
+.theme-rlm .panel-drop-target {
+  outline: 2px dashed #fb923c;
+  outline-offset: -2px;
+  border-radius: 0.5rem;
+  background: rgba(251, 146, 60, 0.05);
+}
+
+.theme-harbor .panel-drop-target {
+  outline: 2px dashed #2dd4bf;
+  outline-offset: -2px;
+  border-radius: 0.5rem;
+  background: rgba(45, 212, 191, 0.05);
+}
+
+/* Code block styling (used by Harbor visualizer) */
+.code-block {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.drag-handle {
+  cursor: grab;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* ── Light theme overrides ─────────────────────────────────
+   When .light is on <html>, remap dark grays to light equivalents.
+   This avoids rewriting every component — the Tailwind classes stay
+   the same, but the underlying colors change. */
+
+.light {
+  /* Background overrides */
+  --tw-bg-opacity: 1;
+}
+
+/* Backgrounds: dark → light */
+.light .bg-gray-950 { background-color: #ffffff !important; }
+.light .bg-gray-900 { background-color: #f9fafb !important; }
+.light .bg-gray-900\/80 { background-color: rgba(249, 250, 251, 0.8) !important; }
+.light .bg-gray-900\/50 { background-color: rgba(249, 250, 251, 0.5) !important; }
+.light .bg-gray-800 { background-color: #f3f4f6 !important; }
+.light .bg-gray-800\/50 { background-color: rgba(243, 244, 246, 0.5) !important; }
+.light .bg-gray-700 { background-color: #e5e7eb !important; }
+
+/* Text: light on dark → dark on light */
+.light .text-gray-100 { color: #111827 !important; }
+.light .text-gray-200 { color: #1f2937 !important; }
+.light .text-gray-300 { color: #374151 !important; }
+.light .text-gray-400 { color: #6b7280 !important; }
+.light .text-gray-500 { color: #9ca3af !important; }
+.light .text-gray-600 { color: #d1d5db !important; }
+
+/* Borders */
+.light .border-gray-700 { border-color: #e5e7eb !important; }
+.light .border-gray-800 { border-color: #f3f4f6 !important; }
+.light .border-gray-800\/50 { border-color: rgba(243, 244, 246, 0.5) !important; }
+
+/* Accent colors stay vibrant but slightly adjusted for contrast */
+.light .text-cyan-400 { color: #0891b2 !important; }
+.light .text-cyan-400\/80 { color: rgba(8, 145, 178, 0.8) !important; }
+.light .border-cyan-500 { border-color: #06b6d4 !important; }
+.light .text-emerald-300 { color: #059669 !important; }
+.light .text-emerald-400 { color: #059669 !important; }
+.light .text-amber-400 { color: #d97706 !important; }
+.light .text-amber-400\/80 { color: rgba(217, 119, 6, 0.8) !important; }
+.light .text-amber-400\/70 { color: rgba(217, 119, 6, 0.7) !important; }
+.light .text-violet-400 { color: #7c3aed !important; }
+.light .text-red-400 { color: #dc2626 !important; }
+.light .text-yellow-400 { color: #ca8a04 !important; }
+.light .text-green-400 { color: #16a34a !important; }
+
+/* Accent backgrounds */
+.light .bg-emerald-950\/30 { background-color: rgba(5, 150, 105, 0.08) !important; }
+.light .bg-emerald-900 { background-color: rgba(5, 150, 105, 0.15) !important; }
+.light .bg-violet-950\/30 { background-color: rgba(124, 58, 237, 0.08) !important; }
+.light .bg-orange-900\/20 { background-color: rgba(234, 88, 12, 0.08) !important; }
+.light .bg-red-900\/10 { background-color: rgba(220, 38, 38, 0.05) !important; }
+.light .bg-cyan-600 { background-color: #0891b2 !important; }
+
+/* Border accents */
+.light .border-emerald-500 { border-color: #059669 !important; }
+.light .border-emerald-700 { border-color: #059669 !important; }
+.light .border-amber-500 { border-color: #d97706 !important; }
+.light .border-violet-500 { border-color: #7c3aed !important; }
+.light .border-cyan-500 { border-color: #0891b2 !important; }
+.light .border-orange-800\/50 { border-color: rgba(234, 88, 12, 0.3) !important; }
+
+/* Hover states */
+.light .hover\:bg-gray-800:hover { background-color: #e5e7eb !important; }
+.light .hover\:bg-gray-900\/50:hover { background-color: rgba(249, 250, 251, 0.5) !important; }
+.light .hover\:text-gray-200:hover { color: #1f2937 !important; }
+.light .hover\:text-gray-300:hover { color: #374151 !important; }
+.light .hover\:border-gray-700:hover { border-color: #d1d5db !important; }
+.light .hover\:border-gray-400:hover { border-color: #9ca3af !important; }
+.light .hover\:text-cyan-300:hover { color: #0891b2 !important; }
+
+/* Inputs and selects */
+.light select { background-color: #f3f4f6 !important; color: #374151 !important; border-color: #d1d5db !important; }
+.light input { background-color: #f9fafb !important; color: #374151 !important; border-color: #d1d5db !important; }
+
+/* Scrollbar */
+.light .trace-scroll::-webkit-scrollbar-thumb { background: #d1d5db; }
+.light .trace-scroll::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* Markdown code blocks */
+.light pre { background-color: #f3f4f6 !important; }
+.light code { background-color: #f3f4f6 !important; color: #374151 !important; }
