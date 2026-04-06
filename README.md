@@ -45,7 +45,7 @@ RACA closes the loop. One session, one conversation: design → sanity-check →
 
 ## What you get
 
-- **SSH to any cluster** — SLURM, RunPod, or local GPUs. Authenticate once, talk from there.
+- **SSH to any cluster** — Slurm, Runpod, or local GPUs. Authenticate once, talk from there.
 - **Red-team review** — an adversarial agent checks your experiment design before any compute runs.
 - **Live dashboard** — experiment READMEs, timelines, artifacts, results. Local or deployed to a free HuggingFace Space.
 - **Artifact pipeline** — results upload to HuggingFace as they come in, validated automatically, visible on the dashboard immediately.
