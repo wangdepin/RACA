@@ -50,16 +50,17 @@ On start, read state + filesystem. Summarize briefly:
 >
 > "Feel free to skip steps if you're already familiar or want to dive ahead!"
 >
-> "I'd recommend starting by installing two optional plugins — **Superpowers** (research workflows) and **Agent Deck** (parallel sessions). Want to start there, or jump straight into setting up the tutorial experiment?"
+> "I'd recommend starting by installing two optional plugins — **Science-Superpowers** (research methodology) and **Agent Deck** (parallel sessions). Want to start there, or jump straight into setting up the tutorial experiment?"
 
 ---
 
 ## Step 1: Plugins (if they want them)
 
-### Superpowers
+### Science-Superpowers
 > "Run this in your Claude Code session:"
 > ```
-> /plugin install superpowers@claude-plugins-official
+> /plugin marketplace add K-Dense-AI/science-superpowers
+> /plugin install science-superpowers@science-superpowers-dev
 > ```
 
 ### Agent Deck

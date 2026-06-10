@@ -84,7 +84,7 @@ That's it. RACA picks up where you left off — clusters, experiments, everythin
 
 RACA works on its own, but these make it better:
 
-- **[Superpowers](https://github.com/anthropics/claude-code-plugins)** — structured planning, proactive design questions
+- **[Science-Superpowers](https://github.com/K-Dense-AI/science-superpowers)** — research framing, pre-registration, anomaly investigation, red-team review
 - **[Agent-Deck](https://github.com/asheshgoplani/agent-deck)** — run multiple Claude sessions in parallel
 
 ## License

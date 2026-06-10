@@ -13,7 +13,7 @@ This skill is activated whenever the user talks about experiments. Read `.claude
 
 ## Coordination with Other Design Skills
 
-When the user is **designing** an experiment, another design/brainstorming skill may also be active (e.g., `superpowers:brainstorming`). If so, the two are not in conflict — they handle different concerns:
+When the user is **designing** an experiment, another design/framing skill may also be active (e.g., `science-superpowers:framing-research-questions`). If so, the two are not in conflict — they handle different concerns:
 
 - **The design skill** drives the *conversation*: clarifying questions, proposing approaches, presenting design, getting approval.
 - **This skill** drives the *infrastructure*: folder creation, dashboard sync, state tracking, lifecycle gates.
@@ -22,8 +22,8 @@ When the user is **designing** an experiment, another design/brainstorming skill
 
 1. The design skill runs the conversation — questions, approaches, design presentation.
 2. The experiment folder is still created **immediately** by this skill — don't wait for the design process to finish.
-3. The design spec goes to `EXPERIMENT_README.md` in the experiment folder, NOT the design skill's default spec location (e.g., `docs/superpowers/specs/`). This skill's output location takes precedence for experiments.
-4. After the user approves the design, the next step is the **experiment lifecycle** (update `flow_state.json` → `/raca:experiment-preflight` → canary → run), NOT the design skill's default next step (e.g., `writing-plans`). If implementation planning is needed for experiment code, it can be used within the lifecycle, but the experiment flow owns the top-level sequence.
+3. The design spec goes to `EXPERIMENT_README.md` in the experiment folder, NOT the design skill's default spec location (e.g., the science-superpowers analysis-plan default path). This skill's output location takes precedence for experiments.
+4. After the user approves the design, the next step is the **experiment lifecycle** (update `flow_state.json` → `/raca:experiment-preflight` → canary → run), NOT the design skill's default next step (e.g., `designing-the-analysis`). If analysis planning is needed for experiment code, it can be used within the lifecycle, but the experiment flow owns the top-level sequence.
 
 **When no design skill is active:** This skill handles the full design conversation itself, following the flow defined in `.claude/rules/experiments.md`.
 

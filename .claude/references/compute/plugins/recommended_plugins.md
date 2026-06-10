@@ -1,22 +1,25 @@
 # Recommended Claude Code Plugins
 
-## Superpowers
+## Science-Superpowers
 
-Workflow skills for research: brainstorming, TDD, planning, code review, debugging.
+Computational-science methodology skills: research framing, prior-work survey, analysis design,
+pre-registration, reproducible setup, anomaly investigation, and red-team review.
 
 **Install (inside Claude Code):**
 ```
-/plugin install superpowers@claude-plugins-official
+/plugin marketplace add K-Dense-AI/science-superpowers
+/plugin install science-superpowers@science-superpowers-dev
 ```
 
 No restart needed. Skills are immediately available.
 
 **Key skills:**
-- Brainstorming — turn ideas into designs through dialogue
-- Writing Plans — comprehensive implementation plans
-- Subagent-Driven Development — fresh agent per task with review
-- TDD — test-driven development workflow
-- Debugging — systematic bug investigation
+- `framing-research-questions` — turn a fuzzy idea into a sharp, testable question before touching data
+- `surveying-prior-work` — check whether the literature already answers it
+- `designing-the-analysis` — concrete analysis plan before fitting any model
+- `preregistering-analysis` — lock predictions and decision rules before seeing outcomes
+- `investigating-anomalous-results` — hypothesis-driven debugging of surprising/failed results
+- `requesting-red-team-review` — adversarial review before committing compute
 
 ## Agent Deck
 

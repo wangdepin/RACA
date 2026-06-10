@@ -60,7 +60,7 @@ I really liked the paper and idea, plus it had great pass@k performance on many 
 
 ### How Do We Turn That Prompt Into An Experiment?
 
-With some of the right tools (SuperPowers + AgentDeck, see below), Claude automatically reads the paper, finds the repo, identifies the key files in their custom sglang and transformers forks, and asks me questions to nail down the design:
+With some of the right tools (Science-Superpowers + AgentDeck, see below), Claude automatically reads the paper, finds the repo, identifies the key files in their custom sglang and transformers forks, and asks me questions to nail down the design:
 
 ```text
 [... tool calls / agents reading and downloading code ...]
@@ -80,7 +80,7 @@ As a result, RACA expects the following structure:
 
 > **Workspace:** I keep everything in `~/Research`. Projects, notes, tools, repos. Not always context-friendly (you have to organize so Claude can find things), but it lets conversations span my whole research history. There's a `notes/experiments/` folder where Claude writes plans, timelines, and artifact registries, and where I put my own notes. If you install, the first thing it asks is where you want your workspace.
 
-> **Tools:** [Superpowers](link) makes Claude more proactive during design, asking clarifying questions instead of waiting for me to specify everything. [Agent-Deck](link) orchestrates multiple sessions and lets you set `--dangerously-skip-permissions` so Claude can run commands without stopping to ask at every step. **If you use our GitHub command to install, Claude Code will help you get these tools setup auto-magically!**
+> **Tools:** [Science-Superpowers](https://github.com/K-Dense-AI/science-superpowers) makes Claude more proactive during design, asking clarifying questions instead of waiting for me to specify everything. [Agent-Deck](link) orchestrates multiple sessions and lets you set `--dangerously-skip-permissions` so Claude can run commands without stopping to ask at every step. **If you use our GitHub command to install, Claude Code will help you get these tools setup auto-magically!**
 
 ![Agent Deck](../images/agent-deck.png)
 _An example of my agent deck main window. You can see I have a few experiments all being worked on in parallel, managed by a Conductor usually (a Claude Code session managing Claude Code sessions). Conductors are nice but Agent-Deck really helped me orchestrate, instead of 24 terminal tabs, I just have 1._
